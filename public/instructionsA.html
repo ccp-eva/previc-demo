@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/ess7xmw.css" />
+    <!-- Material Design CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
+
+    <!-- Material Design CDN JS -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- Material Design Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- Typography -->
+    <link rel="stylesheet" href="https://use.typekit.net/ess7xmw.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico" />
+    <link rel="icon" href="./images/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+
+    <!-- User Style/JavaScript -->
+    <link rel="stylesheet" href="instructionsA.css" />
+    <script src="./instructionsA.js" defer></script>
+    <title>PREVIC</title>
+  </head>
+
+  <body>
+    <div id="flex-wrapper">
+      <div class="flex-item">
+        <h1 class="heading">Anleitung</h1>
+
+        <p>
+          Im Folgenden zeigen wir Ihnen viele Wörter. Bitte geben Sie für jedes
+          Wort an, ob Ihr Kind dieses Wort schon einmal gesagt hat.
+        </p>
+
+        <p>
+          Dabei handelt es sich um eine Sammlung von Wörtern, die von
+          unterschiedlichen Kindern benutzt werden - auch von Kindern, die sehr
+          viel älter sind als Ihres. Machen Sie sich also keine Gedanken, wenn
+          Ihr Kind manche oder viele der Wörter nicht verwendet.
+        </p>
+
+        <p>
+          Jedes Wort wird auf einer Karte gezeigt. Die Farbe der Karte gibt an,
+          ob es sich um ein Substantiv, ein Verb oder ein Adjektiv handelt. Das
+          ist als Hilfe gedacht, um die Wörter besser einordnen zu können. Egal
+          um was für ein Wort es sich handelt, geben Sie einfach an, ob Ihr Kind
+          es schon einmal gesagt hat.
+        </p>
+
+        <div class="columns">
+          <div class="col-left">
+            <img id="img-noun" alt="Noun" src="images/noun.png" />
+          </div>
+
+          <div class="col-middle">
+            <img id="img-verb" alt="Verb" src="images/verb.png" />
+          </div>
+
+          <div class="col-right">
+            <img id="img-adj" alt="Adjective" src="images/adjective.png" />
+          </div>
+        </div>
+
+        <div id="button-center-wrapper">
+          <button
+            type="button"
+            class="ccp-button confirm foo-button mdc-button mdc-button--raised"
+            id="button-center-item"
+          >
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label"><strong>weiter</strong></span>
+          </button>
+        </div>
+
+        <br />
+        <hr style="width: 100%; text-align: left; margin-left: 0" />
+        <br />
+
+        <div class="columns">
+          <div class="col">
+            <img id="logo-ccp" src="./images/mpi-eva-ccp.svg" />
+          </div>
+          <div class="col">
+            <img id="logo-leuphana" src="./images/leuphana.svg" />
+          </div>
+          <div class="col">
+            <img id="logo-jena" src="./images/jena.png" />
+          </div>
+          <div class="col">
+            <img id="logo-zas" src="./images/leibniz-zas.png" />
+          </div>
+        </div>
+
+        <br />
+
+        <a href="https://www.eva.mpg.de/de/impressum/" target="_blank"
+          >Impressum</a
+        >
+
+        <!-- end flex-item -->
+      </div>
+
+      <!-- end flex-wrapper -->
+    </div>
+  </body>
+</html>

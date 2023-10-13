@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/ess7xmw.css" />
+    <!-- Material Design CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
+
+    <!-- Material Design CDN JS -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- Material Design Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- Typography -->
+    <link rel="stylesheet" href="https://use.typekit.net/ess7xmw.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico" />
+    <link rel="icon" href="./images/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+
+    <!-- User Style/JavaScript -->
+    <link rel="stylesheet" href="goodbye.css" />
+    <script src="./goodbye.js" defer></script>
+    <title>PREVIC</title>
+  </head>
+
+  <body>
+    <div id="flex-wrapper">
+      <div class="flex-item">
+        <h1 class="heading">Vielen herzlichen Dank für Ihre Hilfe!</h1>
+
+        <div id="video-img-wrapper">
+          <img
+            id="video-img-item"
+            alt="Picture of the Institute"
+            src="images/mpi-surprise.gif"
+          />
+        </div>
+
+        <p>
+          Toll - alles geschafft! Herzlichen Dank für Ihre Antworten und vielen
+          Dank, dass Sie sich die Zeit genommen haben. Sie können das Fenster
+          jetzt schließen. Falls Sie Fragen oder Anmerkungen haben, wenden Sie
+          sich bitte an diese E-Mail-Adresse:
+
+          <a
+            href="#"
+            class="cryptedmail"
+            data-name="forschungsreise"
+            data-domain="eva.mpg"
+            data-tld="de"
+            onclick="window.location.href =
+                `mailto: ${this.dataset.name}@${this.dataset.domain}.${this.dataset.tld}`; return false;"
+          ></a>
+
+          <br />
+        </p>
+
+        <p>
+          Haben Sie Lust, mit Ihrem Kind an weiteren Online-Studien
+          teilzunehmen? Dann schauen Sie gerne auf
+          <a href="https://www.kinderschaffenwissen.de" target="_blank"
+            >www.kinderschaffenwissen.de</a
+          >
+          vorbei.
+        </p>
+
+        <p>Wir freuen uns auf ein Wiedersehen mit Ihnen!</p>
+
+        <p>
+          Herzliche Grüße und bis bald, <br />
+          Ihr Forschungsteam vom Max-Planck-Institut
+        </p>
+
+        <br />
+
+        <br />
+        <hr style="width: 100%; text-align: left; margin-left: 0" />
+        <br />
+
+        <div class="columns">
+          <div class="col">
+            <img id="logo-ccp" src="./images/mpi-eva-ccp.svg" />
+          </div>
+          <div class="col">
+            <img id="logo-leuphana" src="./images/leuphana.svg" />
+          </div>
+          <div class="col">
+            <img id="logo-jena" src="./images/jena.png" />
+          </div>
+          <div class="col">
+            <img id="logo-zas" src="./images/leibniz-zas.png" />
+          </div>
+        </div>
+
+        <br />
+
+        <a href="https://www.eva.mpg.de/de/impressum/" target="_blank"
+          >Impressum</a
+        >
+
+        <!-- end flex-item -->
+      </div>
+
+      <!-- end flex-wrapper -->
+    </div>
+  </body>
+</html>

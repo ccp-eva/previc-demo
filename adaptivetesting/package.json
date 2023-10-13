@@ -1,0 +1,30 @@
+{
+  "name": "adaptivetesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/export.js",
+  "types": "lib/export.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts"
+  },
+  "author": {
+    "name": "Jonas Engicht",
+    "email": "dev@condecon.de"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.6.4",
+    "@types/node": "^20.4.8",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "jest": "^29.6.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

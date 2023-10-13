@@ -1,0 +1,107 @@
+:root {
+  --ccp-dark-blue: hsl(204, 39%, 26%);
+  --ccp-light-blue: hsl(195, 100%, 46%);
+  --ccp-minerva-green: hsl(177, 100%, 21%);
+  --ccp-light-green: hsl(64, 70%, 49%);
+  --mdc-theme-primary: var(--ccp-minerva-green);
+}
+
+body {
+  font-family: pt-sans-narrow, sans-serif;
+  background-color: var(--ccp-minerva-green);
+  /* color: hsl(0, 0, 10%); */
+}
+
+.heading {
+  font-family: cholla-sans, sans-serif;
+  font-weight: 700;
+  letter-spacing: calc(20rem / 1000);
+  color: var(--ccp-minerva-green);
+  text-align: center;
+}
+
+.heading-em {
+  font-family: cholla-sans, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: calc(20rem / 1000);
+  color: var(--ccp-minerva-green);
+}
+
+p {
+  font-family: pt-sans-narrow, sans-serif;
+  color: hsl(0 0% 10%);
+  font-size: 18px;
+}
+
+.text-strong {
+  font-family: pt-sans-narrow, sans-serif;
+  font-weight: 700;
+  color: hsl(0 0% 20%);
+}
+
+#flex-wrapper {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf5e7;
+}
+
+.flex-item {
+  width: 70vw;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.ccp-button {
+  background-color: var(--ccp-minerva-green) !important;
+  margin: 10px 0 !important;
+}
+
+.ccp-button:disabled {
+  background-color: hsl(177, 100%, 36%) !important;
+}
+
+#img-setup {
+  max-width: 50vw;
+  padding: 2%;
+  border: 2px solid var(--ccp-minerva-green);
+}
+
+/* ensures the increment/decrement arrows always display */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.mdc-text-field-character-counter{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mdc-text-field__input{
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  align-items: center;
+}
+
+.columns > * {
+ flex-basis: 100%;
+}
+
+.columns img{
+  width: 80%;
+  height: auto;
+  padding: 0%;
+}
