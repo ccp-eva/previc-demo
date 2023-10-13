@@ -1,6 +1,4 @@
 import './index.css';
-import { fileChecker } from './backend/fileChecker.js';
-import { writeState } from './backend/writeState.js';
 
 let continueIDOK = false;
 let continueVOK = false;
@@ -60,13 +58,6 @@ const handleContinueClick = async (event) => {
   // save entered values
   const subjID = document.querySelector('.mdc-text-field__input').value;
   se = document.getElementById('se').value;
-
-  // initialize UI and state
-  const isFile = await fileChecker(`./data/${subjID}.json`);
-  // if file does not exist, initialize it
-  if (!isFile) {
-    writeState({ id: subjID, trial: 0 }, subjID);
-  }
 
   window.location.href = `./instructionsA.html?ID=${subjID}&v=${version}&se=${se}`;
 };

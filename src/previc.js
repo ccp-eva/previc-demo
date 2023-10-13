@@ -1,8 +1,6 @@
 import './previc.css';
 import downloadData from './backend/downloadData.js';
-import wordData from './backend/wordData.js';
-import { fileChecker } from './backend/fileChecker.js';
-import { writeState } from './backend/writeState.js';
+import wordData from './backend/wordDataSelected.js';
 // https://github.com/gajus/swing
 import * as Swing from 'swing';
 
@@ -25,65 +23,41 @@ const cards = document.getElementById('stack');
 // ---------------------------------------------------------------------------------------------------------------------
 //  FIND OUT AT WHICH TRIAL TO START
 // ---------------------------------------------------------------------------------------------------------------------
-let item = '';
+let item = 0;
 
 // read in word data
 const data = JSON.parse(wordData());
 const trials = data.length;
 
-// initialize UI and state
-const isProgressFile = await fileChecker(`./data/${subjID}.json`);
+counter.textContent = `${item + 1} von ${trials} Wörtern`;
 
-// update UI state
-if (isProgressFile) {
-  fetch(`./data/${subjID}.json`)
-    .then((progressfile) => progressfile.json())
-    .then((progresscontent) => {
-      item = progresscontent.trial;
-      counter.textContent = `${item + 1} von ${trials} Wörtern`;
+data.splice(data.length - item, item);
 
-      data.splice(data.length - item, item);
-
-      for (let i = 0; i < data.length; i++) {
-        const newLI = document.createElement('li');
-        newLI.classList.add(`${data[i].pos}`);
-        newLI.appendChild(document.createTextNode(data[i].word));
-        cards.appendChild(newLI);
-      }
-
-      // prepare the cards in the stack for iteration
-      [].forEach.call(
-        document.querySelectorAll('#stack li'),
-        function (targetElement) {
-          // add card element to the stack
-          stack.createCard(targetElement);
-
-          targetElement.classList.add('in-deck');
-        },
-      );
-    });
+for (let i = 0; i < data.length; i++) {
+  const newLI = document.createElement('li');
+  newLI.classList.add(`${data[i].pos}`);
+  newLI.appendChild(document.createTextNode(data[i].word));
+  cards.appendChild(newLI);
 }
 
-// load already existing data, so that we don't overwrite
-const isDataFile = await fileChecker(`./data/previc-${subjID}.json`);
+// prepare the cards in the stack for iteration
+[].forEach.call(
+  document.querySelectorAll('#stack li'),
+  function (targetElement) {
+    // add card element to the stack
+    stack.createCard(targetElement);
 
-let responseLog = [];
+    targetElement.classList.add('in-deck');
+  },
+);
 
-if (isDataFile) {
-  fetch(`./data/previc-${subjID}.json`)
-    .then((datafile) => datafile.json())
-    .then((datacontent) => {
-      responseLog = datacontent;
-    });
-} else {
-  responseLog = {
-    // get ID out of URL parameter
-    meta: {
-      subjID: subjID,
-    },
-    data: [],
-  };
-}
+let responseLog = {
+  // get ID out of URL parameter
+  meta: {
+    subjID: subjID,
+  },
+  data: [],
+};
 
 // ---------------------------------------------------------------------------------------------------------------------
 // FUNCTION FOR LOGGING RESPONSES
@@ -107,12 +81,6 @@ function logResponse() {
   item++;
   counter.textContent = `${item + 1} von ${trials} Wörtern`;
 
-  // save on server which trial the participant just finished
-  writeState(
-    { id: responseLog.meta.subjID, trial: item },
-    responseLog.meta.subjID,
-  );
-
   // Remove card from stack and hide
   cards.lastElementChild.classList.remove('in-deck');
   cards.lastElementChild.remove();
@@ -124,12 +92,9 @@ stack.on('throwout', (e) => {
   responseLog.data[item - 1].score =
     e.throwDirection.description === 'LEFT' ? 0 : 1;
 
-  devmode
-    ? console.log(responseLog)
-    : downloadData(responseLog, responseLog.meta.subjID);
-
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
+    downloadData(responseLog, responseLog.meta.subjID);
     window.location.href = `./goodbye.html?ID=${responseLog.meta.subjID}`;
   }
 });
@@ -137,10 +102,6 @@ stack.on('throwout', (e) => {
 const handleNoClick = (e) => {
   logResponse();
   responseLog.data[item - 1].score = 0;
-
-  devmode
-    ? console.log(responseLog)
-    : downloadData(responseLog, responseLog.meta.subjID);
 
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
@@ -151,10 +112,6 @@ const handleNoClick = (e) => {
 const handleYesClick = (e) => {
   logResponse();
   responseLog.data[item - 1].score = 1;
-
-  devmode
-    ? console.log(responseLog)
-    : downloadData(responseLog, responseLog.meta.subjID);
 
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
