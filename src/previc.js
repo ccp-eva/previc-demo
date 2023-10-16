@@ -95,7 +95,7 @@ stack.on('throwout', (e) => {
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
     downloadData(responseLog, responseLog.meta.subjID);
-    window.location.href = `./goodbye.html?ID=${responseLog.meta.subjID}`;
+    setTimeout(() => (window.location.href = `./goodbye.html`), 1000);
   }
 });
 
@@ -105,7 +105,8 @@ const handleNoClick = (e) => {
 
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
-    window.location.href = `./goodbye.html?ID=${responseLog.meta.subjID}`;
+    downloadData(responseLog, responseLog.meta.subjID);
+    setTimeout(() => (window.location.href = `./goodbye.html`), 1000);
   }
 };
 
@@ -115,7 +116,8 @@ const handleYesClick = (e) => {
 
   // if all words were shown, save responses
   if (document.querySelectorAll('#stack li').length === 0) {
-    window.location.href = `./goodbye.html?ID=${responseLog.meta.subjID}`;
+    downloadData(responseLog, responseLog.meta.subjID);
+    setTimeout(() => (window.location.href = `./goodbye.html`), 1000);
   }
 };
 

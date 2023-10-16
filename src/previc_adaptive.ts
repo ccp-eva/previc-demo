@@ -165,7 +165,11 @@ class AdaptivePREVICTest {
 
 
       //go to goodbye
-      window.location.href = "./goodbye.html";
+      setTimeout(
+        () =>
+          (window.location.href = `./goodbye.html`),
+        1000,
+      );
     }
   }
 
