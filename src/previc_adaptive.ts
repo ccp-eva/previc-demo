@@ -1,4 +1,4 @@
-import wordData from './backend/wordDataSelected';
+import wordData from './backend/wordData';
 import * as Swing from 'swing';
 import { AdaptiveTest, TestItem } from 'adaptivetesting';
 import { Word } from "./backend/Word";
@@ -37,16 +37,6 @@ class AdaptivePREVICTest {
     this.test = new AdaptiveTest();
     //load data
     this.data = JSON.parse(wordData());
-
-    for (let i = 0; i < this.data.length; i++) {
-        //show item to user
-        const newLI = document.createElement('li');
-        newLI.classList.add(`${this.data[i].pos}`);
-        newLI.appendChild(document.createTextNode(this.data[i].word));
-        this.cards.appendChild(newLI);
-        (this.stack as any).createCard(newLI);
-        newLI.classList.add('in-deck');   
-    }
 
     //setup item counter
     this.item_counter = 0;
@@ -96,10 +86,16 @@ class AdaptivePREVICTest {
       }
     });
 
+    //show item to user
+    const newLI = document.createElement('li');
+    newLI.classList.add(`${this.data[item_index].pos}`);
+    newLI.appendChild(document.createTextNode(this.data[item_index].word));
+    this.cards.appendChild(newLI);
+    (this.stack as any).createCard(newLI);
 
 
     
-    this.counter.textContent = `Bisher haben Sie ${this.item_counter} Wörter bearbeitet.`;
+    this.counter.textContent = `Bisher haben Sie ${this.item_counter} Wörter beantwortet.`;
     
 
   }

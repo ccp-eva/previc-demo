@@ -71,6 +71,25 @@ body {
     margin-left: -20vw; 
 }
 
+.rectangle {
+    width: 40vw; 
+    height: 55vh; 
+    border: 2px solid #ECECEC; 
+    position: absolute;
+    top: 4vh; 
+    left: 25vw;
+}
+
+.rotate-left {
+    transform: rotate(-1.2deg);
+    background-color: #9cc982;
+}
+
+.rotate-right {
+    transform: rotate(1.2deg); /* Rotate the rectangle 1 degree to the right */
+    background-color: #819ec2;
+}
+
 #viewport li {
     width: 40vw; 
     height: 55vh; 
