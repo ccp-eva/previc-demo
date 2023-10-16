@@ -57,9 +57,16 @@ const handleContinueClick = async (event) => {
 
   // save entered values
   const subjID = document.querySelector('.mdc-text-field__input').value;
-  se = document.getElementById('se').value;
+  const se = parseFloat(document.getElementById('se').value);
 
-  window.location.href = `./instructionsA.html?ID=${subjID}&v=${version}&se=${se}`;
+  // Check if the entered number is within the specified range
+  if (se < 0.1 || se > 0.9) {
+    document.getElementById(
+      'illegal-se',
+    ).innerHTML = `Bitte wählen Sie einen Standardfehler zwischen 0.1 und 0.9.`;
+  } else {
+    window.location.href = `./instructionsA.html?ID=${subjID}&v=${version}&se=${se}`;
+  }
 };
 
 button.addEventListener('click', handleContinueClick, { capture: false });
