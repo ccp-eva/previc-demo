@@ -137,18 +137,25 @@ class AdaptivePREVICTest {
         console.debug(e);
       }
       
-    
-
-
     //check condition
-    if (this.test.AbilitySE > this.se_selection! && this.test.AnsweredItems.length != this.test.Items.length) {
+    //test will stop if desired se has been achieved or
+    //all items have been presented to the participant
+    if (this.test.AbilitySE > this.se_selection! && this.test.Items.length != 0) {
       //continue the test
       this.item_counter++;
       this.RunTest();
     }
     else {
+      this.endTest();      
+    }
+  }
 
-      let location = (document.location as unknown) as string;
+  /**
+   * Prepares data, downloads blob and redirects
+   * to goodbye page
+   */
+  endTest(){
+    let location = (document.location as unknown) as string;
       const ID = new URL(location).searchParams.get("ID"); 
 
       //save values for export
@@ -170,9 +177,7 @@ class AdaptivePREVICTest {
           (window.location.href = `./goodbye.html`),
         1000,
       );
-    }
   }
-
 
   //event handler for left button
   handleNoClick = (e:any) => {
