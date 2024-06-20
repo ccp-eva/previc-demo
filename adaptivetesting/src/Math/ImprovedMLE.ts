@@ -41,7 +41,7 @@ export class ImprovedMLE {
         for(let ability = previ_abil; ability <= +10; ability = ability + 0.1){
             const calculated_likelihood = this.LikelihoodFunction(ability);
 
-            if(calculated_likelihood <= prev_lik){
+            if(calculated_likelihood < prev_lik){
                 return this.Step2(ability);
             }
 
@@ -63,7 +63,7 @@ export class ImprovedMLE {
             const calculated_likelihood = this.LikelihoodFunction(ability);
 
 
-            if(calculated_likelihood <= prev_lik){
+            if(calculated_likelihood < prev_lik){
                 return this.Step3(ability);
             }
 
@@ -88,7 +88,7 @@ export class ImprovedMLE {
         for(let ability = last_max_ability; ability <= ability + 0.5; ability = ability + 0.001){
             const calculated_likelihood = this.LikelihoodFunction(ability);
 
-            if(calculated_likelihood <= prev_lik){
+            if(calculated_likelihood < prev_lik){
                 return previ_abil;
             }
 

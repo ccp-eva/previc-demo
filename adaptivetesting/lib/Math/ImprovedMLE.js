@@ -30,7 +30,7 @@ class ImprovedMLE {
         let prev_lik = Number.NEGATIVE_INFINITY;
         for (let ability = previ_abil; ability <= +10; ability = ability + 0.1) {
             const calculated_likelihood = this.LikelihoodFunction(ability);
-            if (calculated_likelihood <= prev_lik) {
+            if (calculated_likelihood < prev_lik) {
                 return this.Step2(ability);
             }
             else {
@@ -46,7 +46,7 @@ class ImprovedMLE {
         let previ_abil = last_max_ability;
         for (let ability = last_max_ability; ability > last_max_ability - 1; ability = ability - 0.01) {
             const calculated_likelihood = this.LikelihoodFunction(ability);
-            if (calculated_likelihood <= prev_lik) {
+            if (calculated_likelihood < prev_lik) {
                 return this.Step3(ability);
             }
             else {
@@ -63,7 +63,7 @@ class ImprovedMLE {
         let prev_lik = Number.NEGATIVE_INFINITY;
         for (let ability = last_max_ability; ability <= ability + 0.5; ability = ability + 0.001) {
             const calculated_likelihood = this.LikelihoodFunction(ability);
-            if (calculated_likelihood <= prev_lik) {
+            if (calculated_likelihood < prev_lik) {
                 return previ_abil;
             }
             else {
