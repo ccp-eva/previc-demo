@@ -5,7 +5,6 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack serve",
-    "postinstall": "npm --prefix adaptivetesting install",
     "build": "webpack --mode production",
     "deploy": "npm run build && rsync -avu --chmod D2775 dist/ ccp-odcJ:/srv/ccp-odc/previc-demo/"
   },

@@ -5,5 +5,4 @@ import { StandardError } from "./Math/StandardError.js";
 import { TestInformationFunction } from "./Math/TestInformationFunction.js";
 import { UrrysRule } from "./Math/UrrysRule.js";
 import { TestItems } from "./Data/Items.js";
-import { ImprovedMLE } from "./Math/ImprovedMLE.js";
-export { AdaptiveTest, TestItem, MaximumLikelihoodEstimator, StandardError, TestInformationFunction, UrrysRule, TestItems, ImprovedMLE };
+export { AdaptiveTest, TestItem, MaximumLikelihoodEstimator, StandardError, TestInformationFunction, UrrysRule, TestItems };

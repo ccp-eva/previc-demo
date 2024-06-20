@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImprovedMLE = exports.TestItems = exports.UrrysRule = exports.TestInformationFunction = exports.StandardError = exports.MaximumLikelihoodEstimator = exports.TestItem = exports.AdaptiveTest = void 0;
+exports.TestItems = exports.UrrysRule = exports.TestInformationFunction = exports.StandardError = exports.MaximumLikelihoodEstimator = exports.TestItem = exports.AdaptiveTest = void 0;
 const AdaptiveTest_js_1 = require("./Models/AdaptiveTest.js");
 Object.defineProperty(exports, "AdaptiveTest", { enumerable: true, get: function () { return AdaptiveTest_js_1.AdaptiveTest; } });
 const TestItem_js_1 = require("./Models/TestItem.js");
@@ -15,5 +15,3 @@ const UrrysRule_js_1 = require("./Math/UrrysRule.js");
 Object.defineProperty(exports, "UrrysRule", { enumerable: true, get: function () { return UrrysRule_js_1.UrrysRule; } });
 const Items_js_1 = require("./Data/Items.js");
 Object.defineProperty(exports, "TestItems", { enumerable: true, get: function () { return Items_js_1.TestItems; } });
-const ImprovedMLE_js_1 = require("./Math/ImprovedMLE.js");
-Object.defineProperty(exports, "ImprovedMLE", { enumerable: true, get: function () { return ImprovedMLE_js_1.ImprovedMLE; } });
