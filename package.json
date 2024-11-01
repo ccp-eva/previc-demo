@@ -18,6 +18,7 @@
     "adaptivetesting": "file:adaptivetesting",
     "babel-loader": "^8.2.5",
     "install": "^0.13.0",
+    "minimal-webpack-dev-server-babel-setup": "file:",
     "npm": "^10.1.0",
     "swing": "^3.1.4"
   },
