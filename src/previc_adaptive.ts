@@ -3,6 +3,7 @@ import * as Swing from 'swing';
 import { AdaptiveTest, TestItem } from 'adaptivetesting';
 import { Word } from "./backend/Word";
 import { AbilityCorrection } from './backend/AbilityCorrection';
+import { Items } from './backend/ItemsType';
 
 class AdaptivePREVICTest {
   //properties
@@ -158,12 +159,17 @@ class AdaptivePREVICTest {
     let location = (document.location as unknown) as string;
       const ID = new URL(location).searchParams.get("ID"); 
 
+      // drop additional properties (item parameter CI) from answered items
+      const answered_items: Items[] = this.test.AnsweredItems.map(
+        ({word, Difficulty}) => ({word, Difficulty})
+      );
+      
       //save values for export
       const results_values = {
         "id": ID, 
         "final_ability_level": this.test.AbilityLevel,
         "final_se": this.test.AbilitySE,
-        "answered_item": this.test.AnsweredItems,
+        "answered_item": answered_items,
         "response_pattern": this.test.ResponsePattern
       };
       
