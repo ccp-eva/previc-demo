@@ -27,6 +27,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "adaptivetesting": "file:",
     "typescript": "^5.4.5"
   }
 }
